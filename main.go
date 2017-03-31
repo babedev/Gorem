@@ -2,7 +2,7 @@ package main
 
 import "gopkg.in/gin-gonic/gin.v1"
 import "net/http"
-import "./models"
+import "github.com/babedev/gorem/models"
 
 func main() {
 	r :=  gin.New()
