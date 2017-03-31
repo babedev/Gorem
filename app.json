@@ -1,0 +1,12 @@
+{
+  "name": "gorem",
+  "description": "Go Lorem",
+  "keywords": [
+    "go",
+    "lorem"
+  ],
+  "image": "heroku/go:1.6",
+  "mount_dir": "src/github.com/babedev/gorem",
+  "website": "http://github.com/babedev/gorem",
+  "repository": "http://github.com/babedev/gorem"
+}
