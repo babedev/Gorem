@@ -10,7 +10,7 @@ func main() {
 
 	r.GET("/users", getUsers)
 
-	r.Run(":8080")
+	r.Run(":80")
 }
 
 func getUsers(c *gin.Context) {
