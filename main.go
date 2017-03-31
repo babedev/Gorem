@@ -1,16 +1,27 @@
 package main
 
-import "gopkg.in/gin-gonic/gin.v1"
-import "net/http"
-import "github.com/babedev/gorem/models"
+import (
+	"log"
+	"net/http"
+	"os"
+
+	"gopkg.in/gin-gonic/gin.v1"
+	"github.com/babedev/gorem/models"
+)
 
 func main() {
+	p := os.Getenv("PORT")
+
+	if p == "" {
+		log.Fatal("$PORT must be set")
+	}
+
 	r :=  gin.New()
 	r.Use(gin.Logger())
 
 	r.GET("/users", getUsers)
 
-	r.Run(":80")
+	r.Run(":" + p)
 }
 
 func getUsers(c *gin.Context) {
