@@ -1,11 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"os"
 
-	"gopkg.in/gin-gonic/gin.v1"
+	"github.com/gin-gonic/gin"
 	"github.com/babedev/gorem/models"
 )
 
@@ -13,7 +12,7 @@ func main() {
 	p := os.Getenv("PORT")
 
 	if p == "" {
-		log.Fatal("$PORT must be set")
+		p = "8080"
 	}
 
 	r :=  gin.New()
