@@ -7,8 +7,5 @@ type User struct {
 }
 
 func Users() []User {
-	return []User {
-		User {"John Doe", "John", "Doe"},
-		User {"John Doe", "John", "Doe"}
-	}
+	return []User {User {"John Doe", "John", "Doe"},User {"John Doe", "John", "Doe"}}
 }
