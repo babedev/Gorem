@@ -1,11 +1,12 @@
 package main
 
 import (
-	"net/http"
 	"os"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/babedev/gorem/models"
+
+	"github.com/babedev/gorem/handlers/users"
 )
 
 func main() {
@@ -15,14 +16,19 @@ func main() {
 		p = "8080"
 	}
 
-	r :=  gin.New()
+	r := gin.New()
+	r.LoadHTMLGlob("templates/*")
 	r.Use(gin.Logger())
 
-	r.GET("/users", getUsers)
+	r.GET("/", index)
+	r.GET("/users", users.List)
+	r.GET("/user/:name", users.Get)
 
 	r.Run(":" + p)
 }
 
-func getUsers(c *gin.Context) {
-	c.JSON(http.StatusOK, models.Users())
+func index(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"title": "Directories",
+	})
 }
