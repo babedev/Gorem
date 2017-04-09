@@ -8,9 +8,11 @@ import (
 )
 
 func List(c *gin.Context) {
+	cs := models.Contact{Email: "john@doe.com", FacebookLink: "johndoe", TwitterLink: ""}
 	us := []models.User{
-		{Fullname: "John Doe", Firstname: "John", Lastname: "Doe", Age: 15},
-		{Fullname: "John Doe", Firstname: "John", Lastname: "Doe", Age: 15},
+		{ID: 1, Fullname: "John Doe", Firstname: "John", Lastname: "Doe", Age: 15, Contact: cs},
+		{ID: 2, Fullname: "John Doe", Firstname: "John", Lastname: "Doe", Age: 15},
+		{},
 	}
 
 	c.JSON(http.StatusOK, us)
