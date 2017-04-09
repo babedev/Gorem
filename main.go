@@ -22,7 +22,7 @@ func main() {
 
 	r.GET("/", index)
 	r.GET("/users", users.List)
-	r.GET("/user/:id", users.Get)
+	r.GET("/users/:id", users.Get)
 
 	r.Run(":" + p)
 }
