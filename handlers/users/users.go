@@ -26,3 +26,7 @@ func Get(c *gin.Context) {
 
 	c.JSON(http.StatusOK, result)
 }
+
+func Save(c *gin.Context) {
+	c.JSON(http.StatusOK, models.User{})
+}

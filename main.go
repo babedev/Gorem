@@ -23,6 +23,7 @@ func main() {
 	r.GET("/", index)
 	r.GET("/users", users.List)
 	r.GET("/users/:id", users.Get)
+	r.POST("/users", users.Save)
 
 	r.Run(":" + p)
 }
